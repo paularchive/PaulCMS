@@ -22,7 +22,14 @@
 					<button type="button" class="btn btn-default navbar-btn" id="btn-debug"><i class="fa fa-bug"></i></button>
 					<?php } ?>
 				</li>
-				<li><a href="logout.php">Logout</a></li>
+				<li class="dropdown">
+					
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $user['first'].' '.$user['last']; ?> <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="logout.php">Logout</a></li>
+					</ul>
+				
+				</li>
 				
 			</ul>
 		</div>
