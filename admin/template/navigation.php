@@ -24,7 +24,7 @@
 				</li>
 				<li class="dropdown">
 					
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $user['first'].' '.$user['last']; ?> <span class="caret"></span></a>
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $user['fullname']; ?> <span class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">
 						<li><a href="logout.php">Logout</a></li>
 					</ul>
