@@ -39,20 +39,29 @@ if (!isset($_SESSION['username'])) {
 		
 		<div class="col-md-3">
 			
-			<?php
+			<div class="list-group">
 			
-				$q = "SELECT * FROM pages ORDER BY title ASC";
-				$r = mysqli_query($dbc, $q);
+				<?php
 				
-				while($page_list = mysqli_fetch_assoc($r)) {
+					$q = "SELECT * FROM pages ORDER BY title ASC";
+					$r = mysqli_query($dbc, $q);
 					
-					echo $page_list['title'];
+					while($page_list = mysqli_fetch_assoc($r)) { 
 					
-				}
+						$blurb = substr(strip_tags($page_list['body']), 0, 120);
+						
+					?>
+						
+						<a href="#" class="list-group-item">
+							<h4 class="list-group-item-header"><?php echo $page_list['title']; ?></h4>
+							<p class="list-group-item-text"><?php echo $blurb; ?></p>
+						</a>
+						
+				<?php } ?>
 			
-			?>
-			
-		</div>
+			</div> <!-- END List Group -->
+		
+		</div> <!-- END Colum 3 -->
 		
 		<div class="col-md-9">
 			
