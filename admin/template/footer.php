@@ -1,5 +1,5 @@
 <div class="footer">
-	
-	<p>This is my footer.</p>
-	
+	<div class="container">	
+		<p class="text-muted">This is my footer.</p>
+	</div>
 </div>

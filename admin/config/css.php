@@ -21,26 +21,30 @@
 <style>
 
 	html {
-	  position: relative;
-	  min-height: 100%;
+		position: relative;
+		min-height: 100%;
 	}
 	body {
-	  /* Margin bottom by footer height */
-	  margin-bottom: 60px;
+		margin-bottom: 60px;
+		padding-top: 70px;
 	}
 	.footer {
-	  position: absolute;
-	  bottom: 0;
-	  width: 100%;
-	  /* Set the fixed height of the footer here */
-	  height: 60px;
-	  background-color: #f5f5f5;
-	}
-	#btn-debug {
-		/*
 		position: absolute;
-		right: 5px;
-		*/
+		bottom: 0;
+		width: 100%;
+		height: 60px;
+		background-color: #f5f5f5;
+	}
+	body > .container {
+		padding: 60px 15px 0;
+	}
+	.container .text-muted {
+		margin: 20px 0;
+	}
+	
+	.footer > .container {
+		padding-right: 15px;
+		padding-left: 15px;
 	}
 	#console-debug {
 		position: absolute;
@@ -51,8 +55,5 @@
 		overflow-y: scroll;
 		background-color: #FFFFFF;
 		box-shadow: 2px 2px 5px #CCCCCC;
-	}
-	#console-debug pre {
-
 	}
 </style>

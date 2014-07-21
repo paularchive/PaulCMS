@@ -1,25 +1,32 @@
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 	
-
+	<div class="container">	
 	
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			<span class="sr-only">Toggle navigation</span>
+			<i style="color:grey" class="fa fa-list"></i>
+			</button>
+		</div>	
+	
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		
-		<ul class="nav navbar-nav">
-			
-			<?php //nav_main($dbc, $pageid); ?>
-			
-			<li><a href="#">Dashboard</a></li>
-			<li><a href="#">Pages</a></li>
-			<li><a href="#">Users</a></li>
-			<li><a href="#">Settings</a></li>
-			
-		</ul>
-		
-		<div class="pull-right">
 			<ul class="nav navbar-nav">
+				
+				<?php //nav_main($dbc, $pageid); ?>
+				
+				<li><a href="#"><i class="fa fa-tasks"></i> Dashboard</a></li>
+				<li><a href="#"><i class="fa fa-file"></i> Pages</a></li>
+				<li><a href="#"><i class="fa fa-users"></i> Users</a></li>
+				<li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
+				
+			</ul>
+			
+			<ul class="nav navbar-nav navbar-right">
 				
 				<li>
 					<?php if($debug == 1) { // Check if debug is turned on ?>
-					<button type="button" class="btn btn-default navbar-btn" id="btn-debug"><i class="fa fa-bug"></i></button>
+					<a id="btn-debug"><i class="fa fa-bug"></i></a>
 					<?php } ?>
 				</li>
 				<li class="dropdown">
@@ -32,7 +39,9 @@
 				</li>
 				
 			</ul>
+			
 		</div>
-		
+	
+	</div> <!-- END container -->
 		
 </nav><!-- END nav -->

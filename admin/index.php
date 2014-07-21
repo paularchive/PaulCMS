@@ -32,106 +32,106 @@ if (!isset($_SESSION['username'])) {
 		
 	<?php include(D_TEMPLATE.'/navigation.php'); // Main Navigation ?>
 	
-	<h1>Admin Dashboard</h1>
-	
-	
-	<div class="row">
+		<h1>Admin Dashboard</h1>
 		
-		<div class="col-md-3">
+		
+		<div class="row">
 			
-			<div class="list-group">
-			
-				<?php
-					
-					if(isset($_POST['submitted']) == 1) {
-							
-						$title = mysqli_real_escape_string($dbc, $_POST['title']);
-						$label = mysqli_real_escape_string($dbc, $_POST['label']);
-						$header = mysqli_real_escape_string($dbc, $_POST['header']);
-						$body = mysqli_real_escape_string($dbc, $_POST['body']);	
+			<div class="col-md-3">
+				
+				<div class="list-group">
+				
+					<?php
 						
-						$q = "INSERT INTO pages (title, label, header, body) VALUES ('$title', '$label', '$header', '$body')";
-						$r = mysqli_query($dbc, $q);
-						
-						if($r) {
+						if(isset($_POST['submitted']) == 1) {
+								
+							$title = mysqli_real_escape_string($dbc, $_POST['title']);
+							$label = mysqli_real_escape_string($dbc, $_POST['label']);
+							$header = mysqli_real_escape_string($dbc, $_POST['header']);
+							$body = mysqli_real_escape_string($dbc, $_POST['body']);	
 							
-							$message = '<p>Page was added!</p>';
+							$q = "INSERT INTO pages (title, label, header, body) VALUES ('$title', '$label', '$header', '$body')";
+							$r = mysqli_query($dbc, $q);
 							
-						} else {
-							
-							$message = '<p>Page could not be added because: '.mysqli_error($dbc).'</p>';
-							$message .= '<p>'.$q.'</p>';
+							if($r) {
+								
+								$message = '<p>Page was added!</p>';
+								
+							} else {
+								
+								$message = '<p>Page could not be added because: '.mysqli_error($dbc).'</p>';
+								$message .= '<p>'.$q.'</p>';
+								
+							}
 							
 						}
-						
-					}
-				
-				?>
-				
-				<?php
-				
-					$q = "SELECT * FROM pages ORDER BY title ASC";
-					$r = mysqli_query($dbc, $q);
 					
-					while($page_list = mysqli_fetch_assoc($r)) { 
-					
-						$blurb = substr(strip_tags($page_list['body']), 0, 120);
-						
 					?>
+					
+					<?php
+					
+						$q = "SELECT * FROM pages ORDER BY title ASC";
+						$r = mysqli_query($dbc, $q);
 						
-						<a href="#" class="list-group-item">
-							<h4 class="list-group-item-header"><?php echo $page_list['title']; ?></h4>
-							<p class="list-group-item-text"><?php echo $blurb; ?></p>
-						</a>
+						while($page_list = mysqli_fetch_assoc($r)) { 
 						
-				<?php } ?>
-			
-			</div> <!-- END List Group -->
-		
-		</div> <!-- END Colum 3 -->
-		
-		<div class="col-md-9">
-			
-			<?php if(isset($message)) { echo $message; } ?>
-			
-			<form action="index.php" method="post" role="form">
+							$blurb = substr(strip_tags($page_list['body']), 0, 120);
+							
+						?>
+							
+							<a href="#" class="list-group-item">
+								<h4 class="list-group-item-header"><?php echo $page_list['title']; ?></h4>
+								<p class="list-group-item-text"><?php echo $blurb; ?></p>
+							</a>
+							
+					<?php } ?>
 				
-				<div class="form-group">
-					
-					<label for="title">Title:</label>
-					<input class="form-control" type="text" name="title" id="title" placeholder="Page Title">
-					
-				</div>
-				
-				<div class="form-group">
-					
-					<label for="label">Label:</label>
-					<input class="form-control" type="text" name="label" id="label" placeholder="Page Label">
-					
-				</div>
-
-				<div class="form-group">
-					
-					<label for="header">Header:</label>
-					<input class="form-control" type="text" name="header" id="header" placeholder="Page Header">
-					
-				</div>
-
-				<div class="form-group">
-					
-					<label for="body">Body:</label>
-					<textarea class="form-control" name="body" id="body" rows="8" placeholder="Page Body"></textarea>
-					
-				</div>
-				
-				<button type="submit" class="btn btn-default">Save</button>
-				<input type="hidden" name="submitted" value="1">
+				</div> <!-- END List Group -->
 			
-			</form>
+			</div> <!-- END Colum 3 -->
 			
-		</div> <!-- END Colum 9
-		
-	</div> <!-- END row -->
+			<div class="col-md-9">
+				
+				<?php if(isset($message)) { echo $message; } ?>
+				
+				<form action="index.php" method="post" role="form">
+					
+					<div class="form-group">
+						
+						<label for="title">Title:</label>
+						<input class="form-control" type="text" name="title" id="title" placeholder="Page Title">
+						
+					</div>
+					
+					<div class="form-group">
+						
+						<label for="label">Label:</label>
+						<input class="form-control" type="text" name="label" id="label" placeholder="Page Label">
+						
+					</div>
+	
+					<div class="form-group">
+						
+						<label for="header">Header:</label>
+						<input class="form-control" type="text" name="header" id="header" placeholder="Page Header">
+						
+					</div>
+	
+					<div class="form-group">
+						
+						<label for="body">Body:</label>
+						<textarea class="form-control" name="body" id="body" rows="8" placeholder="Page Body"></textarea>
+						
+					</div>
+					
+					<button type="submit" class="btn btn-default">Save</button>
+					<input type="hidden" name="submitted" value="1">
+				
+				</form>
+				
+			</div> <!-- END Colum 9 -->
+			
+		</div> <!-- END row -->
 	
 	<?php include(D_TEMPLATE.'/footer.php'); // Footer ?>
 	
