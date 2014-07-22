@@ -9,9 +9,10 @@ PaulCMS is a Content Management System based on PHP, which means that you can ma
 #####Requirements
 To run PaulCMS on your own website you have to have the following things:
 
-PHP version 5.3 or greater
-MySQL version 5.0 or greater
-The mod_rewrite Apache module (if you are using a Apache server)
+ * PHP version 5.3 or greater
+ * MySQL version 5.0 or greater
+ * The mod_rewrite Apache module (if you are using a Apache server)
+
 That’s really it. I recommend Apache or Nginx as the most robust and featureful server for running PaulCMS, but any server that supports PHP and MySQL will do it. That said, I can’t test every possible environment
 
 #####Website Functions
