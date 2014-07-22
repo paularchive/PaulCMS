@@ -1,8 +1,7 @@
 PaulCMS
 =======
 
-#####Welcome to PaulCMS
-Welcome on the PaulCMS Dev website, here you can download the latest version of PaulCMS. Warning PaulCMS is still in development so not everything is working yet and some functions are missing
+Warning PaulCMS is still in development so not everything is working yet and some functions are missing
 
 #####About PaulCMS
 PaulCMS is a Content Management System based on PHP, which means that you can manage your website that your website with PaulCMS. It's just like Wordpress and Joomla
