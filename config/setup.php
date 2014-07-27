@@ -22,7 +22,7 @@ if(isset($_GET['page'])) {
 	
 } else {
 	
-	$pageid = 1; // Set $pageid equal to 1
+	$pageid = 'home'; // Set $pageid equal to 1
 	
 }
 

@@ -50,7 +50,7 @@ if (!isset($_SESSION['username'])) {
 							$header = mysqli_real_escape_string($dbc, $_POST['header']);
 							$body = mysqli_real_escape_string($dbc, $_POST['body']);	
 							
-							$q = "INSERT INTO pages (title, label, header, body) VALUES ('$title', '$label', '$header', '$body')";
+							$q = "INSERT INTO pages (user ,title, label, header, body) VALUES ($_POST[user] ,'$title', '$label', '$header', '$body')";
 							$r = mysqli_query($dbc, $q);
 							
 							if($r) {
@@ -103,6 +103,32 @@ if (!isset($_SESSION['username'])) {
 						
 					</div>
 					
+					<div class="form-group">
+						
+						<label for="label">User:</label>
+						<select class="form-control" name="user" id="user">
+							
+							<option value="0">No User</option>
+							
+							<?php
+							
+							$q = "SELECT id FROM users ORDER BY first ASC";
+							$r = mysqli_query($dbc, $q);
+							
+							while($user_list = mysqli_fetch_assoc($r)) {
+								 
+								$user_data = data_user($dbc, $user_list['id']);
+									
+							?>
+								
+								<option value="<?php echo $user_data['id']; ?>"><?php echo $user_data['fullname']; ?></option>						
+								
+							<?php } ?>
+
+						</select>
+						
+					</div>
+
 					<div class="form-group">
 						
 						<label for="label">Label:</label>
