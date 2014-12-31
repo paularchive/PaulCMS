@@ -1,6 +1,6 @@
 PaulCMS
 =======
-
+###This Project is dead!
 Warning PaulCMS is still in development so not everything is working yet and some functions are missing
 
 #####About PaulCMS
